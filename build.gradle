@@ -1,0 +1,20 @@
+group 'com.less'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.5
+
+repositories {
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    jcenter()
+    mavenCentral()
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.4.RELEASE")
+}
